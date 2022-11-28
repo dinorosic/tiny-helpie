@@ -1,0 +1,15 @@
+--- !ruby/object:Jumpstart::Configuration
+application_name: TinyHelp.ie
+business_name: Tiny Helpie Ltd.
+domain: tinyhelp.ie
+support_email: support@tinyhelp.ie
+default_from_email: TinyHelp.ie <dino@tinyhelp.ie>
+business_address: ''
+background_job_processor: sidekiq
+email_provider: sendgrid
+personal_accounts: true
+solargraph: true
+register_with_account: false
+apns: false
+fcm: false
+collect_billing_address: false
