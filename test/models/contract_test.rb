@@ -21,7 +21,11 @@
 require "test_helper"
 
 class ContractTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "name returns string with categroy and provider" do
+    contract = contracts(:one)
+    category = contract.category
+    provider = contract.provider
+
+    assert_equal contract.name, "#{category.name} with #{provider.name}"
+  end
 end

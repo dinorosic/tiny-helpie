@@ -23,4 +23,8 @@ class Contract < ApplicationRecord
 
   belongs_to :provider, optional: true
   belongs_to :category, optional: true
+
+  def name
+    "#{category.name} with #{provider.name}"
+  end
 end

@@ -10,7 +10,7 @@ class ContractsControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select "h1", I18n.t("contracts.index.title")
 
-    assert_select ".contract p[role=title]", contract.provider.name
+    assert_select ".contract p[role=title]", contract.name
     assert_select ".contract p[role=expires_at]", "Expires in #{distance_of_time_in_words_to_now(contract.expires_at)}"
   end
 end
