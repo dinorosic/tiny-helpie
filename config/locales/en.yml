@@ -175,6 +175,10 @@ en:
     show:
       title: "Dashboard"
 
+  contracts:
+    index:
+      title: "Contracts"
+
   payments:
     success: "Thanks for subscribing!"
     show:

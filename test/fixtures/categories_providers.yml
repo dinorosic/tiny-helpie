@@ -1,0 +1,7 @@
+one:
+  category: energy
+  provider: acme_gas
+
+two:
+  category: broadband
+  provider: acme_media

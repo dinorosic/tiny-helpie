@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_232410) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_112320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -130,6 +130,35 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_232410) do
     t.datetime "updated_at", null: false
     t.index ["token"], name: "index_api_tokens_on_token", unique: true
     t.index ["user_id"], name: "index_api_tokens_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_providers", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "provider_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.bigint "account_id"
+    t.datetime "expires_at"
+    t.string "status"
+    t.boolean "notified", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "provider_id"
+    t.bigint "category_id"
+    t.index ["account_id"], name: "index_contracts_on_account_id"
+    t.index ["category_id"], name: "index_contracts_on_category_id"
+    t.index ["provider_id"], name: "index_contracts_on_provider_id"
   end
 
   create_table "notification_tokens", force: :cascade do |t|
@@ -253,6 +282,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_232410) do
     t.integer "interval_count", default: 1
     t.string "description"
     t.string "unit"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_providers_on_name", unique: true
   end
 
   create_table "user_connected_accounts", force: :cascade do |t|

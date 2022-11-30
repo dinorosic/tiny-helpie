@@ -1,0 +1,21 @@
+<div class="container mx-auto p-2">
+  <div class="my-8">
+    <h1><%= t(".title") %></h1>
+
+    <div class="grid grid-cols-1 gap-4" role="list">
+      <% @contracts.each do |contract| %>
+        <div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          </div>
+          <div class="min-w-0 flex-1">
+            <a href="#" class="contract">
+              <p class="text-sm font-medium text-gray-900" role="title"><%= contract.provider.name %></p>
+              <p class="truncate text-sm text-gray-500" role="expires_at">Expires in <%= distance_of_time_in_words_to_now(contract.expires_at) %></p>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

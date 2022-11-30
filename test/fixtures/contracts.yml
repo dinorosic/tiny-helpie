@@ -1,0 +1,5 @@
+one:
+  account: one
+  category: energy
+  provider: acme_gas
+  expires_at:  <%= 3.weeks.from_now %>

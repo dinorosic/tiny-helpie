@@ -1,0 +1,7 @@
+acme_media:
+  name: "Acme Media"
+  url: "https://"
+
+acme_gas:
+  name: "Gas Media"
+  url: "https://"
