@@ -27,12 +27,6 @@ class Turbo::Ios::PathConfigurationsController < ApplicationController
       },
       rules: [
         {
-          patterns: ["/new$", "/edit$"],
-          properties: {
-            presentation: "modal"
-          }
-        },
-        {
           patterns: ["/users/sign_up"],
           properties: {
             flow: "registration"

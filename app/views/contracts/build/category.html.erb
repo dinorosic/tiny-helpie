@@ -1,0 +1,14 @@
+<div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+  <div class="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-4xl lg:px-0 p-4">
+    <%= turbo_frame_tag "new_contract", data: { "turbo-action": "advance" } do %>
+      <div>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Category</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">Select category that best describes your contract.</p>
+      </div>
+
+      <% categories.each do |category| %>
+        <%= button_to category.name, wizard_path, method: :put, params: { contract: { category_id: category.id } } %>
+      <% end -%>
+    <% end %>
+  </div>
+</div>

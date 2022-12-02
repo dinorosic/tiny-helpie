@@ -1,0 +1,43 @@
+<% content_for :header do %>
+  <%= render 'header' %>
+<% end %>
+
+<div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+  <div class="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-4xl lg:px-0 p-4">
+    <%= turbo_frame_tag "new_contract", target: "_top" do %>
+      <div>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">End date</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">Don't know excat date? It's better to be early than late, select month before, 1st day of the month, ...</p>
+      </div>
+      <%= form_for(@contract, :url => wizard_path, :method => :put, html: { "data-turbo-frame" => "_top" }) do |form| %>
+        <% if @contract.errors.any? %>
+          <div id="error_explanation" class="bg-red-50 p-4 rounded-2xl mt-3">
+            <h3 class="font-medium text-red-800"><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h3>
+            <div class="mt-2 text-sm text-red-700">
+              <ul role="list" class="list-disc space-y-1 pl-5">
+                <% @contract.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="my-5">
+          <fieldset class="mt-2">
+            <%= form.date_select :expires_at, { start_year: Date.today.year - 1, end_year: Date.today.year + 5 }, class: "block rounded-md border border-gray-200 outline-none px-6 py-4 mt-2 w-full" %>
+          </fieldset>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class=" flex w-0 flex-1">
+            <%= link_to "Back", previous_wizard_path, class: "inline-flex items-center justify-center rounded-2xl border-2 border-orange px-5 py-2 text-base font-semibold text-orange" %>
+          </div>
+          <div class=" flex w-0 flex-1 justify-end">
+            <%= form.submit "Next", class: "inline-flex items-center justify-center rounded-2xl bg-orange px-5 py-2 text-base font-semibold text-white" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
