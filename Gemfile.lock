@@ -394,7 +394,7 @@ GEM
       rubocop-ast (>= 1.23.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.23.0)
+    rubocop-ast (1.24.0)
       parser (>= 3.1.1.0)
     rubocop-performance (1.15.1)
       rubocop (>= 1.7.0, < 2.0)
@@ -443,7 +443,7 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    solargraph-rails (0.2.2.pre.4)
+    solargraph-rails (0.3.1)
       activesupport
       solargraph (>= 0.41.1)
     sorbet-runtime (0.5.10564)
@@ -559,7 +559,7 @@ DEPENDENCIES
   ruby-oembed (~> 0.16.0)
   selenium-webdriver
   sidekiq
-  solargraph-rails (~> 0.2.0.pre)
+  solargraph-rails (~> 0.3.1)
   sprockets-rails (>= 3.4.1)
   standard
   stimulus-rails (~> 1.2)
