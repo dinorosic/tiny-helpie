@@ -142,6 +142,10 @@ Rails.application.routes.draw do
   match "/500", via: :all, to: "errors#internal_server_error"
 
   authenticated :user do
+    resources :contracts, only: [] do
+      resources :build, controller: "contracts/build"
+    end
+
     root to: "contracts#index", as: :user_root
     # Alternate route to use if logged in users should still see public root
     # get "/dashboard", to: "dashboard#show", as: :user_root

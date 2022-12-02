@@ -1,6 +1,7 @@
 <div class="container mx-auto p-2">
   <div class="my-8">
     <h1><%= t(".title") %></h1>
+    <p><%= link_to "New", new_contract_build_path(contract_id: "building"), class: "inline-flex items-center justify-center rounded-2xl border-2 border-orange px-5 py-2 text-base font-semibold text-orange" %></p>
 
     <div class="grid grid-cols-1 gap-4" role="list">
       <% @contracts.each do |contract| %>

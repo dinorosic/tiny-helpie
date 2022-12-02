@@ -67,6 +67,8 @@ group :development do
   # A fully configurable and extendable Git hook manager
   gem "overcommit", require: false
 
+  gem "ruby-lsp", "~> 0.3.6", :group => :development
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler", ">= 2.3.3"
 
@@ -113,6 +115,7 @@ gem "rotp", "~> 6.2"
 gem "rqrcode", "~> 2.1"
 gem "ruby-oembed", "~> 0.16.0", require: "oembed"
 gem "whenever", "~> 1.0", require: false
+gem "wicked"
 
 # Jumpstart manages a few gems for us, so install them from the extra Gemfile
 if File.exist?("config/jumpstart/Gemfile")
@@ -121,5 +124,3 @@ end
 
 # We recommend using strong migrations when your app is in production
 # gem "strong_migrations", "~> 0.7.6"
-
-gem "ruby-lsp", "~> 0.3.6", :group => :development

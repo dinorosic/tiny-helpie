@@ -24,7 +24,29 @@ class Contract < ApplicationRecord
   belongs_to :provider, optional: true
   belongs_to :category, optional: true
 
+  scope :active, -> { where(status: "active") }
+
   def name
     "#{category.name} with #{provider.name}"
+  end
+
+  def active?
+    status == "active"
+  end
+
+  def active_or_category?
+    status.include?("category") || active?
+  end
+
+  def active_or_provider?
+    status.include?("provider") || active?
+  end
+
+  def active_or_started_at?
+    status.include?("started_at") || active?
+  end
+
+  def active_or_expires_at?
+    status.include?("expires_at") || active?
   end
 end

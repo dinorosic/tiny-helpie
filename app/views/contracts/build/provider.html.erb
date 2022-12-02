@@ -1,0 +1,18 @@
+<% content_for :header do %>
+  <%= render 'header' %>
+<% end %>
+
+<div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+  <div class="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-4xl lg:px-0 p-4">
+    <%= turbo_frame_tag "new_contract", data: { "turbo-action": "advance" } do %>
+      <div>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Provider</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">Who's is your contract with?</p>
+      </div>
+
+      <% providers.each do |provider| %>
+        <%= button_to provider.name, wizard_path, method: :put, params: { contract: { provider_id: provider.id } } %>
+      <% end -%>
+    <% end %>
+  </div>
+</div>
