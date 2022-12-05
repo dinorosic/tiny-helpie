@@ -133,7 +133,7 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     bcrypt (3.1.18)
-    benchmark (0.2.0)
+    benchmark (0.2.1)
     better_html (2.0.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -331,7 +331,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.2.0)
       activesupport (>= 3.0.0)
-    racc (1.6.0)
+    racc (1.6.1)
     rack (2.2.4)
     rack-protection (3.0.4)
       rack
@@ -444,9 +444,9 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    solargraph-rails (0.3.1)
+    solargraph-rails (1.1.0)
       activesupport
-      solargraph (>= 0.41.1)
+      solargraph
     sorbet-runtime (0.5.10564)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -560,7 +560,7 @@ DEPENDENCIES
   ruby-oembed (~> 0.16.0)
   selenium-webdriver
   sidekiq
-  solargraph-rails (~> 0.3.1)
+  solargraph-rails (~> 1.1.0)
   sprockets-rails (>= 3.4.1)
   standard
   stimulus-rails (~> 1.2)
